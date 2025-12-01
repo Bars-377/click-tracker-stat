@@ -6,7 +6,7 @@ with open("config.json", "r", encoding="utf-8") as f:
     config = json.load(f)
 
 db_config = config["db"]
-search_texts = config.get("search_texts", ["Запись на приём к врачу"])
+search_texts = config.get("search_texts", [])
 
 # Подключение к PostgreSQL
 conn = psycopg2.connect(
@@ -26,14 +26,14 @@ try:
             FROM
                 clicks
             WHERE
-                text = %s
+                text = %s AND client_id = %s
             GROUP BY
                 user_login
             ORDER BY
                 appointment_count DESC;
         """
         for text in search_texts:
-            cursor.execute(query, (text,))
+            cursor.execute(query, (text, config.get("client_id", "0")))
             results = cursor.fetchall()
             print(f"\nРезультаты для: '{text}'")
             print(f"{'user_login':<20} | {'appointment_count'}")
