@@ -11,5 +11,27 @@
         "Популярные услуги",
         "Справки Выписки"
     ],
-    "client_id": "321"
+    "client_id": "01-1",
+    "allowed_sites": [
+        "gosuslugi.ru",
+        "connectgas.ru",
+        "vashkontrol.ru",
+        "consultant.ru",
+        "corpmsp.ru",
+        "md.tomsk.ru",
+        "надальнийвосток.рф",
+        "nalog.gov.ru",
+        "mfc.tomsk.ru",
+        "sfr.gov.ru",
+        "trudvsem.ru",
+        "pravo.gov.ru",
+        "egisso.ru",
+        "finombudsman.ru",
+        "pg.er.ru",
+        "minfin.gov.ru",
+        "ej.sudrf.ru",
+        "notariat70.ru",
+        "notariat.ru",
+        "dom.gosuslugi.ru"
+    ]
 }
